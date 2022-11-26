@@ -9,4 +9,8 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Inter', sans-serif;
     }
+    .container{
+        width:calc(100vw - 161px) ;
+        margin: 0 auto;
+    }
 `;
