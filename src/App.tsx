@@ -1,7 +1,9 @@
-import React from 'react'
+import AdminsDesktop from "./pages/desktop/AdminsDesktop";
 
 export default function App() {
   return (
-    <div>App</div>
-  )
+    <div>
+      <AdminsDesktop />
+    </div>
+  );
 }
