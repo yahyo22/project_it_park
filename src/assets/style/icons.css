@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .icon {
   display: inline-block;
   min-width: 24px;
@@ -51,3 +52,7 @@
   mask-image: url("../icons/cush.svg");
   -webkit-mask-image: url("../icons/cush.svg");
 }
+=======
+.a{
+}
+>>>>>>> ecbecda4fc2d1e71029762109ef535cb57185e45
