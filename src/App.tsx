@@ -1,9 +1,16 @@
-import AdminsDesktop from "./pages/desktop/AdminsDesktop";
+import Router from "./router/Router";
+import { BrowserRouter } from "react-router-dom";
+
+// 
+import { GlobalStyle } from "./assets/style/GlobalStyles";
 
 export default function App() {
   return (
-    <div>
-      <AdminsDesktop />
-    </div>
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </>
   );
 }
