@@ -4,6 +4,8 @@ import styled, { css } from "styled-components";
 import LoginImg from "../../assets/img/Group 1000003350.png";
 import LoginImg2 from "../../assets/img/20220408_131702_0001 1.png";
 import Input from "../../Components/input/Input";
+import Button from "../../Components/button/Button";
+import Checkbox from "../../Components/input/Checkbox";
 export default function Login() {
   return (
     <StyleLogin>
@@ -14,22 +16,29 @@ export default function Login() {
           <img src={LoginImg2} alt="" />
           <h1>Добро пожаловать</h1>
         </div>
-        <div className="form">
+        <form className="form">
         <div>
-          <label htmlFor="">Почта</label>
-          <Input placeholder="hannah.green@test.com" type="text"/>
+          <Input placeholder="hannah.green@test.com" type="email"label={"Почта"}/>
         </div>
         <div>
-          <label htmlFor="">Пароль</label>
-          <Input placeholder="Password123@" type="password"/>
+          <Input placeholder="Password123@" type="password"label="Пароль"/>
         </div>
         <div>
           <div>
-            <label htmlFor="">Введите код с картинки</label>
-          <Input placeholder="Enter the shown text" type="text"/>
+          <Input placeholder="Enter the shown text" type="text" label="Введите код с картинки"/>
           </div>
         </div>
+        <div className="radio">
+         <Checkbox/>
+          <p>Запомнить этот компьютер</p>
         </div>
+        <div className="button">
+          <Button>
+          Войти
+          </Button>
+          <p>Забыли пароль?</p>
+        </div>
+        </form>
       </section>
       </div>
     </StyleLogin>
@@ -52,12 +61,11 @@ const StyleLogin = styled.div`
     z-index: -10;
   }
   section {
-  
-background: red;
+background: #FFFFFF;
 border-radius: 10px;
 padding: 80px 60px;
 width: 657px;
-height: 726px;
+min-height: 726px;
     .top {
       display: flex;
       flex-direction: column;
@@ -68,11 +76,44 @@ height: 726px;
         line-height: 52px;
         letter-spacing: 0em;
         color: #153060;
+        margin-bottom: 32px;
       }
       img{
         height: 78px;
         width: 186px;
 
+      }
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .radio{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        p{
+          margin: 0;
+          padding: 0;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0.25px;
+text-align: left;
+color: #153060;
+        }
+      }
+      .button{
+        p{
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0.25px;
+text-align: center;
+color: #F2451C;
+margin-top: 32px;
+transform: translateX(-160px);
+        }
       }
     }
   }

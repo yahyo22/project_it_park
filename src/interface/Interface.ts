@@ -1,5 +1,5 @@
 export interface Iinput{
-    placeholder: string;
+    placeholder?: string;
   type: string;
   label?:string;
 }

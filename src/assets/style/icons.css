@@ -51,3 +51,13 @@
   mask-image: url("../icons/cush.svg");
   -webkit-mask-image: url("../icons/cush.svg");
 }
+
+.icon.icon-eyeclosed {
+  mask-image: url("../icons/eyeclosed.svg");
+  -webkit-mask-image: url("../icons/eyeclosed.svg");
+}
+
+.icon.icon-eye{
+  mask-image: url("../icons/eyes.svg");
+  -webkit-mask-image: url("../icons/eyes.svg");
+}
