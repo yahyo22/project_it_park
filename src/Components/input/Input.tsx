@@ -12,7 +12,7 @@ export default function Input({ placeholder, type, label }: Iinput) {
     <StyledInput> 
       <div className="div">
         {label ? <label htmlFor={uuid}>{label}</label> : null}
-        <input type={isHide ?type:"text"} placeholder={placeholder} id={uuid}/>
+        <input type={isHide ?type :"text"} placeholder={placeholder} id={uuid}/>
         {type === "password" ? 
         <i className={isHide === true ?" icon icon-eyeclosed":"icon icon-eye"} onClick={f}></i>
         :null}
