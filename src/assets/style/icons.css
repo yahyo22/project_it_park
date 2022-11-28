@@ -52,11 +52,14 @@
   -webkit-mask-image: url("../icons/cush.svg");
 }
 
+.icon.icon-arrowRight {
+  mask-image: url("../icons/arrowRight.svg");
+  -webkit-mask-image: url("../icons/arrowRight.svg");
+}
 .icon.icon-eyeclosed {
   mask-image: url("../icons/eyeclosed.svg");
   -webkit-mask-image: url("../icons/eyeclosed.svg");
 }
-
 .icon.icon-eye{
   mask-image: url("../icons/eyes.svg");
   -webkit-mask-image: url("../icons/eyes.svg");

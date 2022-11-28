@@ -41,13 +41,40 @@ export default function AdminsDesktop() {
           <div className="top">
             <p>Lorem</p>
             <div className="more">
-              <p>Lorem</p>
+              <p>More</p>
+              <i className="icon icon-arrowRight"></i>
             </div>
           </div>
           <div className="bottom">
             <div className="more-about">
-              <div className="left"></div>
-              <div className="arrow"></div>
+              <div className="left">
+                <div className="glass"></div>
+                <div className="about-text">
+                  <span>Lorem</span>
+                  <p>Lorem</p>
+                </div>
+              </div>
+              <i className="icon icon-arrowRight"></i>
+            </div>
+            <div className="more-about">
+              <div className="left">
+                <div className="glass"></div>
+                <div className="about-text">
+                  <span>Lorem</span>
+                  <p>Lorem</p>
+                </div>
+              </div>
+              <i className="icon icon-arrowRight"></i>
+            </div>
+            <div className="more-about">
+              <div className="left">
+                <div className="glass"></div>
+                <div className="about-text">
+                  <span>Lorem</span>
+                  <p>Lorem</p>
+                </div>
+              </div>
+              <i className="icon icon-arrowRight"></i>
             </div>
           </div>
         </div>
@@ -170,19 +197,77 @@ const StyledDesktop = styled.div`
           line-height: 26px;
           color: #111026;
         }
+
+        .more {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .icon {
+            width: 16px;
+            height: 16px;
+            background-color: #111026 !important;
+          }
+        }
       }
 
       .bottom {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 24px;
+        gap: 20px;
         flex-wrap: wrap;
 
         .more-about {
-          width: 320px;
+          padding: 23px;
+          width: 300px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
           background: #4d4cac;
           border-radius: 20px;
+
+          .left {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+
+            .glass {
+              width: 59px;
+              height: 59px;
+              background: #fefefe;
+              opacity: 0.15;
+              border-radius: 12px;
+            }
+
+            .about-text {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              align-items: flex-start;
+
+              span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                color: #fefefe;
+                opacity: 0.8;
+              }
+            }
+
+            p {
+              font-weight: 500;
+              font-size: 17px;
+              line-height: 26px;
+              color: #fefefe;
+            }
+          }
+
+          .icon {
+            width: 16px;
+            height: 16px;
+            background-color: rgba(255, 255, 255, 0.8) !important;
+          }
 
           &:nth-of-type(2) {
             background: #9698d6;

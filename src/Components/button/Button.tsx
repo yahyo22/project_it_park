@@ -1,25 +1,31 @@
-import React from 'react'
-import styled from 'styled-components'
-export default function Button({children}:any) {
-  return (
-    <StyledButton type='button'>{children}</StyledButton>
-  )
+
+import styled from "styled-components";
+
+// Interface
+import { IButton } from "../../interface/Interface";
+
+export default function Button({ content, onClick, type }: IButton) {
+  
+  return <StyledButton onClick={onClick}>{content}</StyledButton>;
 }
+
 const StyledButton = styled.button`
-    display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 18px 32px;
-gap: 10px;
-width: 537px;
-height: 60px;
-background: #7879F1;
-border-radius: 5px;
-flex: none;
-order: 3;
-flex-grow: 0;
-border: none;
-color: #FFFFFF;
-font-size: 16px;
-`
+  cursor: pointer;
+  padding: 18px 32px;
+  width: 100%;
+  background: #7879f1;
+  border-radius: 5px;
+  border: none;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    outline: 2px solid #9badca;
+  }
+`;

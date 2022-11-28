@@ -1,121 +1,129 @@
-import { url } from "inspector";
-import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+
+// Images
 import LoginImg from "../../assets/img/Group 1000003350.png";
 import LoginImg2 from "../../assets/img/20220408_131702_0001 1.png";
+
+// Components
 import Input from "../../Components/input/Input";
+import Checkbox from "../../Components/checkbox/Checkbox";
 import Button from "../../Components/button/Button";
-import Checkbox from "../../Components/input/Checkbox";
+import {useNavigate} from "react-router-dom"
+//react router dom
 export default function Login() {
+  const navigate = useNavigate()
   return (
     <StyleLogin>
       <div className="container">
-      <img src={LoginImg} alt="" className="backgroundImg" />
-      <section>
-        <div className="top">
-          <img src={LoginImg2} alt="" />
-          <h1>Добро пожаловать</h1>
-        </div>
-        <form className="form">
-        <div>
-          <Input placeholder="hannah.green@test.com" type="email"label={"Почта"}/>
-        </div>
-        <div>
-          <Input placeholder="Password123@" type="password"label="Пароль"/>
-        </div>
-        <div>
-          <div>
-          <Input placeholder="Enter the shown text" type="text" label="Введите код с картинки"/>
+        <img src={LoginImg} alt="background_image" className="backgroundImg" />
+        <section>
+          <div className="top">
+            <img src={LoginImg2} alt="" />
+            <h1>Добро пожаловать</h1>
           </div>
-        </div>
-        <div className="radio">
-         <Checkbox/>
-          <p>Запомнить этот компьютер</p>
-        </div>
-        <div className="button">
-          <Button>
-          Войти
-          </Button>
-          <p>Забыли пароль?</p>
-        </div>
-        </form>
-      </section>
+          <form className="form__wrapper">
+            <div>
+              <Input
+                label="Почта"
+                placeholder="hannah.green@test.com"
+                type="text"
+              />
+            </div>
+            <div>
+              <Input
+                label="Пароль"
+                placeholder="Password123@"
+                type="password"
+              />
+            </div>
+            <div>
+              <Input
+                label="Введите код с картинки"
+                placeholder="Enter the shown text"
+                type="text"
+              />
+            </div>
+            <div>
+              <Checkbox label="Запомнить этот компьютер" />
+            </div>
+            <div>
+              <Button content="Войти" type="button"onClick={()=>navigate("/admin")}/>
+            </div>
+            <div className="forgot-password">
+              <span>Забыли пароль?</span>
+            </div>
+          </form>
+        </section>
       </div>
     </StyleLogin>
   );
 }
 const StyleLogin = styled.div`
-  padding: 138px 0px;
-  height: 100vh;
+  padding: 120px 0px;
   width: 100%;
-  .container{
+  height: 100%;
+  background: #f5f5fb;
+
+  .container {
     display: flex;
     justify-content: flex-end;
-  .backgroundImg {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 68%;
-    transform: translateY(-50%);
-    z-index: -10;
-  }
-  section {
-background: #FFFFFF;
-border-radius: 10px;
-padding: 80px 60px;
-width: 657px;
-min-height: 726px;
-    .top {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      h1 {
-        font-size: 45px;
-        font-weight: 400;
-        line-height: 52px;
-        letter-spacing: 0em;
-        color: #153060;
-        margin-bottom: 32px;
-      }
-      img{
-        height: 78px;
-        width: 186px;
 
-      }
+    .backgroundImg {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 68%;
+      transform: translateY(-50%);
+      z-index: 5;
     }
-    form{
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      .radio{
+
+    section {
+      padding: 70px 60px;
+      width: 657px;
+      border-radius: 10px;
+      background: #fff;
+      z-index: 10;
+
+      .top {
+        margin-bottom: 30px;
         display: flex;
-        align-items: center;
-        gap: 10px;
-        p{
-          margin: 0;
-          padding: 0;
-font-size: 14px;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0.25px;
-text-align: left;
-color: #153060;
+        flex-direction: column;
+        gap: 32px;
+
+        h1 {
+          font-size: 40px;
+          font-weight: 400;
+          line-height: 52px;
+          letter-spacing: 0em;
+          color: #153060;
+        }
+
+        img {
+          height: 78px;
+          width: 186px;
         }
       }
-      .button{
-        p{
-font-size: 14px;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0.25px;
-text-align: center;
-color: #F2451C;
-margin-top: 32px;
-transform: translateX(-160px);
+
+      .form__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .forgot-password {
+          margin-top: 8px;
+          width: 256px;
+
+          span {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            letter-spacing: 0.25px;
+            color: #f2451c;
+          }
         }
       }
     }
-  }
   }
 `;
