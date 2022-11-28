@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 
 // logo
 import logo from "../../assets/logo/Logo.png";
 import logoMobile from "../../assets/logo/logoMobile.svg";
 
-export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+// Interface
+interface ISidebar {
+  isOpen: Boolean;
+  setIsOpen: Dispatch<SetStateAction<Boolean>>;
+}
 
+export default function Sidebar({isOpen, setIsOpen}: ISidebar) {
   return (
     <StyledSidebar className={(isOpen ? "open " : "") + "sidebar"}>
       <div className="top">
@@ -126,6 +130,8 @@ const StyledSidebar = styled.div`
 
         &:not(.last-list):hover {
           background-color: #5e81f4;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
 
           p {
             color: #fff;

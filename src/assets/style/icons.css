@@ -56,3 +56,8 @@
   mask-image: url("../icons/arrowRight.svg");
   -webkit-mask-image: url("../icons/arrowRight.svg");
 }
+
+.icon.icon-bell {
+  mask-image: url("../icons/bell.svg");
+  -webkit-mask-image: url("../icons/bell.svg");
+}

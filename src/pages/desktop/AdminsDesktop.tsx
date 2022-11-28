@@ -1,16 +1,20 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 // Components
 import Sidebar from "../../Components/sidebar/Sidebar";
+import UserMenu from "../../Components/userMenu/UserMenu";
 
 // Images
 import noutPerson from "../../assets/img/noutPerson.png";
 import statistics from "../../assets/img/statistics.png";
 
 export default function AdminsDesktop() {
+  const [isOpen, setIsOpen] = useState<Boolean>(false);
+
   return (
-    <StyledDesktop>
-      <Sidebar />
+    <StyledDesktop className={(isOpen ? "On " : "") + ""}>
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <main className="content__wrapper">
         <header className="top-header">
           <h5>Welcome back Admin!</h5>
@@ -79,6 +83,7 @@ export default function AdminsDesktop() {
           </div>
         </div>
       </main>
+      <UserMenu />
     </StyledDesktop>
   );
 }
@@ -88,8 +93,16 @@ const StyledDesktop = styled.div`
   padding: 100px 50px 50px;
   height: 100%;
   background: #f5f5fb;
+  transition: 200ms ease-in-out;
+
+  &.On {
+    margin-left: 60px;
+  }
 
   .content__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+
     .top-header {
       padding: 86px 76px;
       position: relative;
@@ -185,6 +198,9 @@ const StyledDesktop = styled.div`
     }
 
     .bottom-section {
+      width: max-content;
+      margin: 0 auto;
+      
       .top {
         margin-bottom: 35px;
         display: flex;
@@ -199,6 +215,7 @@ const StyledDesktop = styled.div`
         }
 
         .more {
+          cursor: pointer;
           display: flex;
           align-items: center;
           gap: 20px;
@@ -211,7 +228,8 @@ const StyledDesktop = styled.div`
         }
       }
 
-      .bottom {
+      & > .bottom {
+        padding: 0px;
         display: flex;
         align-items: center;
         justify-content: center;
