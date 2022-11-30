@@ -11,5 +11,5 @@ export interface ICheckbox {
 export interface IButton {
   content: string;
   type: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: Function;
 }

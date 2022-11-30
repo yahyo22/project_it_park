@@ -5,18 +5,15 @@ import styled from "styled-components";
 import userAvatar from "../../assets/img/userAvatar.png";
 
 export default function UserMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
-    <StyledUserMenu className={(isMenuOpen ? "On " : "") + ""}>
-      <i
-        className={(isMenuOpen ? "On " : "") + "icon icon-arrowOut"}
-        onClick={() => setIsMenuOpen((p) => !p)}
-      ></i>
+    <StyledUserMenu>
       <div className="content__wrapper">
         <nav className="user-nav">
           <ul className="lists__wrapper">
             <li className="list">Выход</li>
+            <li>
+              <i className="icon icon-arrowOut"></i>
+            </li>
           </ul>
         </nav>
         <section className="user-about-section">
@@ -99,41 +96,22 @@ export default function UserMenu() {
 }
 
 const StyledUserMenu = styled.div`
-  padding: 30px 40px;
+  padding: 20px;
   position: fixed;
   top: 0px;
-  right: -200vw;
-  width: 480px;
+  right: 0px;
+  width: 340px;
   max-height: 100vh;
   overflow-y: auto;
   background: #fefefe;
   transition: 200ms ease-in-out;
 
-  &.On {
-    top: 0px;
-    right: 0px;
-  }
-
   ::-webkit-scrollbar {
     display: none;
   }
 
-  & > .icon {
-    cursor: pointer;
-    position: fixed;
-    top: 30px;
-    right: 40px;
-    /* right: calc(200vw + 40px); */
-    background-color: #5e81f4 !important;
-    transition: 200ms;
-
-    &.On {
-      background-color: #a2a2c2 !important;
-    }
-  }
-
   .content__wrapper {
-    min-height: 200vh;
+    min-height: 100vh;
     overflow: auto;
 
     .user-nav {
@@ -146,29 +124,31 @@ const StyledUserMenu = styled.div`
           cursor: pointer;
           list-style: none;
           font-weight: 500;
-          font-size: 17px;
-          line-height: 26px;
+          font-size: 15px;
+          line-height: 22px;
           color: #000;
 
-          .icon {
+          & > .icon {
+            min-width: 20px;
+            min-height: 20px;
             background-color: #a2a2c2 !important;
-          }
+            }
         }
       }
     }
 
     .user-about-section {
-      margin-top: 40px;
+      margin-top: 20px;
 
       .top {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 29px;
+        gap: 14px;
 
         .img__wrapper {
-          width: 170px;
-          height: 170px;
+          width: 150px;
+          height: 150px;
           border-radius: 100%;
           border: 7px solid #f5f5fb;
           background: url(${userAvatar}) no-repeat center;
@@ -179,29 +159,29 @@ const StyledUserMenu = styled.div`
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 12px;
+          gap: 6px;
 
           h1 {
             font-weight: 700;
             font-size: 20px;
-            line-height: 30px;
+            line-height: 28px;
             color: #111026;
           }
 
           h5 {
             font-weight: 400;
             font-size: 16px;
-            line-height: 24px;
+            line-height: 22px;
             color: #a2a2c2;
           }
         }
       }
 
       .languages__wrapper {
-        margin-top: 60px;
+        margin-top: 48px;
         display: flex;
         flex-direction: column;
-        gap: 35px;
+        gap: 30px;
 
         .language-info {
           width: 100%;
@@ -212,31 +192,31 @@ const StyledUserMenu = styled.div`
           .left {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 18px;
 
             .glass {
-              width: 53px;
-              height: 53px;
+              width: 48px;
+              height: 48px;
               background: #f5f5f7;
-              border-radius: 12px;
+              border-radius: 10px;
             }
 
             .language {
               display: flex;
               flex-direction: column;
-              gap: 8px;
+              gap: 6px;
 
               h3 {
                 font-weight: 500;
-                font-size: 17px;
-                line-height: 26px;
+                font-size: 16px;
+                line-height: 24px;
                 color: #111026;
               }
 
               p {
                 font-weight: 400;
-                font-size: 14px;
-                line-height: 21px;
+                font-size: 13px;
+                line-height: 18px;
                 color: #a2a2c2;
               }
             }
@@ -244,7 +224,7 @@ const StyledUserMenu = styled.div`
 
           .amount-progress {
             width: 100px;
-            height: 6px;
+            height: 5px;
             border-radius: 5px;
             margin-left: -11.5%;
           }
@@ -261,8 +241,8 @@ const StyledUserMenu = styled.div`
 
       .last-actions {
         margin: 0 auto;
-        margin-top: 250px;
-        width: 340px;
+        margin-top: 54px;
+        width: 300px;
 
         .action-top {
           margin-bottom: 30px;
@@ -272,21 +252,21 @@ const StyledUserMenu = styled.div`
 
           h1 {
             font-weight: 500;
-            font-size: 17px;
-            line-height: 26px;
+            font-size: 16px;
+            line-height: 20px;
             color: #111026;
           }
 
           .icon {
-            width: 21px;
-            height: 26px;
+            width: 20px;
+            height: 25px;
           }
         }
 
         .actions-body {
           display: flex;
           flex-direction: column;
-          gap: 33px;
+          gap: 26px;
 
           .action-info {
             width: 100%;
@@ -297,31 +277,31 @@ const StyledUserMenu = styled.div`
             .left {
               display: flex;
               align-items: center;
-              gap: 25px;
+              gap: 18px;
 
               .glass {
-                width: 53px;
-                height: 53px;
+                width: 48px;
+                height: 48px;
                 background: #f5f5f7;
-                border-radius: 12px;
+                border-radius: 10px;
               }
 
               .action {
                 display: flex;
                 flex-direction: column;
-                gap: 8px;
+                gap: 6px;
 
                 h3 {
                   font-weight: 400;
-                  font-size: 16px;
-                  line-height: 24px;
+                  font-size: 14px;
+                  line-height: 17px;
                   color: #131336;
                 }
 
                 p {
                   font-weight: 400;
-                  font-size: 14px;
-                  line-height: 21px;
+                  font-size: 13px;
+                  line-height: 12px;
                   color: #a2a2c2;
                 }
               }
@@ -331,4 +311,8 @@ const StyledUserMenu = styled.div`
       }
     }
   }
+
+  /* @media (max-width: 500px) {
+    width: 100%;
+  } */
 `;

@@ -11,7 +11,7 @@ interface ISidebar {
   setIsOpen: Dispatch<SetStateAction<Boolean>>;
 }
 
-export default function Sidebar({isOpen, setIsOpen}: ISidebar) {
+export default function Sidebar({ isOpen, setIsOpen }: ISidebar) {
   return (
     <StyledSidebar className={(isOpen ? "open " : "") + "sidebar"}>
       <div className="top">
@@ -67,11 +67,11 @@ export default function Sidebar({isOpen, setIsOpen}: ISidebar) {
 }
 
 const StyledSidebar = styled.div`
-  padding: 50px 0px 50px 62px;
+  padding: 30px 0px 30px 20px;
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 300px;
+  width: 230px;
   height: 100vh;
   background-color: #fefefe;
   transition: 200ms;
@@ -102,14 +102,14 @@ const StyledSidebar = styled.div`
         .nav-content {
           display: flex;
           align-items: center;
-          gap: 42px;
+          gap: 38px;
           background: transparent;
 
           p {
             font-style: normal;
             font-weight: 500;
-            font-size: 17px;
-            line-height: 26px;
+            font-size: 16px;
+            line-height: 24px;
             color: #a2a2c2;
           }
         }
@@ -160,12 +160,12 @@ const StyledSidebar = styled.div`
   }
 
   &.open {
-    width: 60px;
+    width: 55px;
     overflow: hidden;
-    padding: 50px 0px 50px 0px;
+    padding: 30px 0px 30px 0px;
 
     .top {
-      padding-left: 6px;
+      padding-left: 4px;
 
       .img {
         width: 44px;
@@ -186,6 +186,10 @@ const StyledSidebar = styled.div`
               border: none;
               border-bottom: 3px solid #5e81f4;
             }
+          }
+
+          &.last-list {
+            right: 12px;
           }
         }
       }

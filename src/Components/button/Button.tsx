@@ -1,12 +1,10 @@
-
 import styled from "styled-components";
 
 // Interface
 import { IButton } from "../../interface/Interface";
 
 export default function Button({ content, onClick, type }: IButton) {
-  
-  return <StyledButton onClick={onClick}>{content}</StyledButton>;
+  return <StyledButton>{content}</StyledButton>;
 }
 
 const StyledButton = styled.button`

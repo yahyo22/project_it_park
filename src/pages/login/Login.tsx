@@ -8,10 +8,8 @@ import LoginImg2 from "../../assets/img/20220408_131702_0001 1.png";
 import Input from "../../Components/input/Input";
 import Checkbox from "../../Components/checkbox/Checkbox";
 import Button from "../../Components/button/Button";
-import {useNavigate} from "react-router-dom"
-//react router dom
+
 export default function Login() {
-  const navigate = useNavigate()
   return (
     <StyleLogin>
       <div className="container">
@@ -47,7 +45,7 @@ export default function Login() {
               <Checkbox label="Запомнить этот компьютер" />
             </div>
             <div>
-              <Button content="Войти" type="button"onClick={()=>navigate("/admin")}/>
+              <Button content="Войти" type="button" />
             </div>
             <div className="forgot-password">
               <span>Забыли пароль?</span>

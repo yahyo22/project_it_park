@@ -89,14 +89,14 @@ export default function AdminsDesktop() {
 }
 
 const StyledDesktop = styled.div`
-  margin-left: 300px;
-  padding: 100px 50px 50px;
+  margin: 0px 340px 0px 230px;
+  padding: 60px 30px 40px;
   height: 100%;
   background: #f5f5fb;
   transition: 200ms ease-in-out;
 
   &.On {
-    margin-left: 60px;
+    margin-left: 55px;
   }
 
   .content__wrapper {
@@ -104,7 +104,9 @@ const StyledDesktop = styled.div`
     margin: 0 auto;
 
     .top-header {
-      padding: 86px 76px;
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 60px 40px;
       position: relative;
       width: 100%;
       border-radius: 17px;
@@ -112,34 +114,37 @@ const StyledDesktop = styled.div`
 
       h5 {
         font-weight: 700;
-        font-size: 25px;
-        line-height: 38px;
+        font-size: 24px;
+        line-height: 34px;
         color: #ff808b;
       }
 
       img {
         position: absolute;
+        width: 140px;
+        height: 170px;
         bottom: 5px;
-        right: 200px;
+        right: 20%;
       }
     }
 
     .statistics__wrapper {
-      margin: 40px 0px;
+      margin: 30px 0px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 23px;
+      flex-wrap: wrap;
+      gap: 17px;
 
       & > div {
-        height: 468px;
+        height: 425px;
         background: #fefefe;
         border-radius: 17px;
       }
 
       .left {
-        padding: 40px 13px 25px;
-        width: 640px;
+        padding: 30px 10px 20px;
+        width: 590px;
 
         .top {
           margin: 0px 0px 40px 25px;
@@ -156,39 +161,40 @@ const StyledDesktop = styled.div`
       }
 
       .right {
-        padding: 24px;
+        padding: 18px;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 13px;
+        gap: 12px;
 
         & > div {
-          padding: 18px 20px;
-          width: 270px;
-          height: 204px;
+          padding: 16px 18px;
+          width: 240px;
+          height: 100%;
           display: flex;
           flex-direction: column;
           align-items: start;
           justify-content: center;
-          gap: 13px;
+          gap: 12px;
           border: 2px solid rgba(0, 0, 0, 0.1);
           border-radius: 12px;
 
           i.icon {
-            min-width: 44px;
-            min-height: 44px;
+            min-width: 33px;
+            min-height: 33px;
           }
 
           h3 {
             font-weight: 600;
-            font-size: 48px;
-            line-height: 72px;
+            font-size: 44px;
+            line-height: 66px;
             color: #111026;
             opacity: 0.6;
           }
 
           p {
             font-weight: 500;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 30px;
             color: #111026;
             opacity: 0.7;
@@ -198,19 +204,19 @@ const StyledDesktop = styled.div`
     }
 
     .bottom-section {
-      width: max-content;
+      max-width: 940px;
       margin: 0 auto;
-      
+
       .top {
-        margin-bottom: 35px;
+        margin-bottom: 25px;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         p {
           font-weight: 500;
-          font-size: 17px;
-          line-height: 26px;
+          font-size: 16px;
+          line-height: 24px;
           color: #111026;
         }
 
@@ -218,11 +224,11 @@ const StyledDesktop = styled.div`
           cursor: pointer;
           display: flex;
           align-items: center;
-          gap: 20px;
+          gap: 10px;
 
           .icon {
-            width: 16px;
-            height: 16px;
+            min-width: 18px;
+            min-height: 18px;
             background-color: #111026 !important;
           }
         }
@@ -232,13 +238,14 @@ const StyledDesktop = styled.div`
         padding: 0px;
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 20px;
+        justify-content: space-between;
         flex-wrap: wrap;
+        gap: 18px;
 
         .more-about {
-          padding: 23px;
-          width: 300px;
+          cursor: pointer;
+          padding: 15px;
+          width: 290px;
           display: flex;
           align-items: flex-end;
           justify-content: space-between;
@@ -248,26 +255,26 @@ const StyledDesktop = styled.div`
           .left {
             display: flex;
             align-items: center;
-            gap: 17px;
+            gap: 14px;
 
             .glass {
-              width: 59px;
-              height: 59px;
+              width: 48px;
+              height: 48px;
               background: #fefefe;
               opacity: 0.15;
-              border-radius: 12px;
+              border-radius: 10px;
             }
 
             .about-text {
               display: flex;
               flex-direction: column;
-              gap: 8px;
+              gap: 6px;
               align-items: flex-start;
 
               span {
                 font-weight: 400;
-                font-size: 14px;
-                line-height: 21px;
+                font-size: 12px;
+                line-height: 16px;
                 color: #fefefe;
                 opacity: 0.8;
               }
@@ -275,15 +282,15 @@ const StyledDesktop = styled.div`
 
             p {
               font-weight: 500;
-              font-size: 17px;
-              line-height: 26px;
+              font-size: 15px;
+              line-height: 20px;
               color: #fefefe;
             }
           }
 
-          .icon {
-            width: 16px;
-            height: 16px;
+          & > .icon {
+            min-width: 18px;
+            min-height: 18px;
             background-color: rgba(255, 255, 255, 0.8) !important;
           }
 
@@ -297,5 +304,45 @@ const StyledDesktop = styled.div`
         }
       }
     }
+  }
+
+  @media (max-width: 1150px) {
+    .content__wrapper {
+      .top-header {
+        padding: 70px 60px;
+
+        h5 {
+          font-size: 24px;
+        }
+
+        img {
+          width: 180px;
+          height: 230px;
+          right: 10%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .content__wrapper {
+      .top-header {
+        padding: 60px 50px;
+
+        h5 {
+          font-size: 20px;
+        }
+
+        img {
+          width: 140px;
+          height: 170px;
+          right: 10%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    margin-left: 55px;
   }
 `;

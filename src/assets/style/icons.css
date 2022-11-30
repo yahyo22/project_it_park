@@ -57,15 +57,6 @@
   -webkit-mask-image: url("../icons/arrowRight.svg");
 }
 
-.icon.icon-eyeclosed {
-  mask-image: url("../icons/eyeclosed.svg");
-  -webkit-mask-image: url("../icons/eyeclosed.svg");
-}
-.icon.icon-eye{
-  mask-image: url("../icons/eyes.svg");
-  -webkit-mask-image: url("../icons/eyes.svg");
-}
-
 .icon.icon-bell {
   mask-image: url("../icons/bell.svg");
   -webkit-mask-image: url("../icons/bell.svg");
