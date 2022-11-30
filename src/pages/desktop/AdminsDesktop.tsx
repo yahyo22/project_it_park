@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { Chart } from "chart.js/auto";
 
 // Components
 import Sidebar from "../../Components/sidebar/Sidebar";
@@ -11,6 +12,50 @@ import statistics from "../../assets/img/statistics.png";
 
 export default function AdminsDesktop() {
   const [isOpen, setIsOpen] = useState<Boolean>(false);
+  const ref: any = useRef();
+
+  //
+  async function getStatistics() {
+    // statistikada x y malumotla
+    const data = [
+      { year: "1/12", count: 5300000 },
+      { year: "2/12", count: 4400000 },
+      { year: "3/12", count: 4700000 },
+      { year: "4/12", count: 6000000 },
+      { year: "5/12", count: 5200000 },
+      { year: "6/12", count: 6700000 },
+      { year: "7/12", count: 6090000 },
+      { year: "8/12", count: 5200000 },
+      { year: "9/12", count: 5900000 },
+      { year: "10/12", count: 4800000 },
+      { year: "11/12", count: 5200000 },
+      { year: "12/12", count: 3500000 },
+    ];
+
+    // Divga ulash joyi
+    new Chart(ref.current, {
+      type: "bar",
+      data: {
+        labels: data.map((row) => row.year),
+        datasets: [
+          {
+            label: "Зарплата за Месяц",
+            data: data.map((row) => row.count),
+            borderWidth: 0,
+            borderRadius: 25,
+            borderSkipped: false,
+            backgroundColor: "#DAD7FE",
+            hoverBackgroundColor: "#4339F2",
+            maxBarThickness: 18
+          },
+        ],
+      },
+    });
+  }
+
+  useEffect(() => {
+    getStatistics();
+  }, []);
 
   return (
     <StyledDesktop className={(isOpen ? "On " : "") + ""}>
@@ -26,7 +71,11 @@ export default function AdminsDesktop() {
               <i className="icon icon-cush"></i>
               <p>Зарплата за Месяц</p>
             </div>
-            <div className="statistics"></div>
+            {/* ==Statistika== */}
+            <div style={{ width: "100%" }}>
+              <canvas ref={ref} id="acquisitions"></canvas>
+            </div>
+            {/* === */}
           </div>
           <div className="right">
             <div>

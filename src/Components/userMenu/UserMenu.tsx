@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 // Images
 import userAvatar from "../../assets/img/userAvatar.png";
 
 export default function UserMenu() {
+  const navigate = useNavigate();
+
   return (
     <StyledUserMenu>
       <div className="content__wrapper">
         <nav className="user-nav">
           <ul className="lists__wrapper">
-            <li className="list">Выход</li>
+            <li className="list" onClick={() => navigate("/login")}>
+              Выход
+            </li>
             <li>
-              <i className="icon icon-arrowOut"></i>
+              <i
+                onClick={() => navigate("/login")}
+                className="icon icon-arrowOut"
+              ></i>
             </li>
           </ul>
         </nav>
@@ -132,7 +139,7 @@ const StyledUserMenu = styled.div`
             min-width: 20px;
             min-height: 20px;
             background-color: #a2a2c2 !important;
-            }
+          }
         }
       }
     }
